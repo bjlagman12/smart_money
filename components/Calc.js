@@ -18,7 +18,6 @@ export default class Calc extends React.Component {
     return (
       <View style={{ flex: 1, flexDirection: "row" }}>
         <TouchableOpacity
-          underlayColor="skyblue"
           style={styles.button}
           onPress={this.onPress}
         >
