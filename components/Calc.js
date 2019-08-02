@@ -1,29 +1,36 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { ThemeProvider, Button } from "react-native-elements";
+import Category from "./Category";
 
 export default class Calc extends React.Component {
   constructor() {
     super();
+    this.state = {};
+    this.onPress = this.onPress.bind(this);
   }
 
-  onPress = () => {};
+  onPress() {
+    console.log("test");
+  }
 
   render() {
+    const list = [
+      "Home",
+      "Dining",
+      "Groceries",
+      "Auto",
+      "Transportation",
+      "Entertainmet",
+      "Gym",
+      "Phone",
+      "Shopping"
+    ];
     return (
-      <View style={{ flex: 1, flexDirection: "row" }}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={this.onPress}
-        >
-          <Text> Home </Text>
-        </TouchableOpacity>
-
+      <View style={styles.container}>
+        {list.map((cat, key) => (
+          <Category cat={cat} key={key} onPress={this.onPress} />
+        ))}
       </View>
     );
   }
@@ -31,25 +38,14 @@ export default class Calc extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  button: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#DDDDDD",
-    // underlayColor: "#ffffff00",
-    // padding: 10
-    height: 100,
-    width: 100
-  },
-  font: {
-    fontWeight: "bold",
-    fontSize: 30
-  },
-  cate: {
-    color: "blue",
-    fontSize: 20
+    alignContent: "space-around",
+    paddingHorizontal: 15,
+    paddingTop: 10,
+    paddingBottom: 175,
+    flexWrap: "wrap"
   }
 });

@@ -8,13 +8,12 @@ import Calc from "./components/Calc";
 class App extends React.Component {
   render() {
     return (
-
       <View style={styles.container}>
         <Top />
         <Calc />
 
         <View style={styles.bottomView}>
-        <Budget />
+          <Budget />
           <Text style={styles.textStyle}>This is Bottom View.</Text>
         </View>
       </View>
