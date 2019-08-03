@@ -1,14 +1,11 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React from "react";
+import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-export default Category = ( {onPress} ) => (
-  <TouchableOpacity
-    style={styles.button}
-    onPress={onPress}
-  >
+export default (Category = ({ onPress }) => (
+  <TouchableOpacity style={styles.button} onPress={onPress}>
     <Text> Home </Text>
   </TouchableOpacity>
-)
+));
 
 const styles = StyleSheet.create({
   container: {
@@ -20,9 +17,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#DDDDDD",
-    // underlayColor: "#ffffff00",
-    // padding: 10
     height: 100,
     width: 100
-  },
-})
+  }
+});

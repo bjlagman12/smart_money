@@ -1,54 +1,45 @@
 import React from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
-import { Button } from "react-native-elements";
+import { StyleSheet, Text, View } from "react-native";
 import Top from "./components/Top";
 import Budget from "./components/Budget";
-import Calc from "./components/Calc";
+import CategoryList from "./components/CategoryList";
 
-class App extends React.Component {
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      page: 0
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Top />
-        <Calc />
-
-        <View style={styles.bottomView}>
-          <Budget />
-          <Text style={styles.textStyle}>This is Bottom View.</Text>
-        </View>
+        {this.state.page === 0 && <Budget />}
+        {this.state.page === 1 && <CategoryList />}
       </View>
     );
   }
 }
 
-export default App;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1
-    // backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center"
-  },
-  font: {
-    fontWeight: "bold",
-    fontSize: 30
-  },
-  cate: {
-    color: "blue",
-    fontSize: 20
   },
   bottomView: {
     width: "100%",
-    height: 50,
+    height: 100,
     backgroundColor: "#FF9800",
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
     bottom: 0
-  },
-  textStyle: {
-    color: "#fff",
-    fontSize: 22
   }
 });
+
+{
+  /* <View style={styles.bottomView}>
+<Text style={styles.textStyle}>This is Bottom View.</Text>
+</View> */
+}

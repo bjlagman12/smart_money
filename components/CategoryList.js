@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { ThemeProvider, Button } from "react-native-elements";
+import { StyleSheet, View } from "react-native";
 import Category from "./Category";
 
-export default class Calc extends React.Component {
+export default class CategoryList extends React.Component {
   constructor() {
     super();
     this.state = {};
