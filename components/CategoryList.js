@@ -3,6 +3,9 @@ import { StyleSheet, View } from "react-native";
 import Category from "./Category";
 
 export default class CategoryList extends React.Component {
+  static navigationOptions = {
+    title: 'What Did Spend',
+  };
   constructor() {
     super();
     this.state = {};

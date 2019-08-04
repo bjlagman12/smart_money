@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "react-native-elements";
 
-export default (Top = () => {
+export default (Top = ({ home }) => {
   return (
     <Header
       leftComponent={{
@@ -16,6 +16,7 @@ export default (Top = () => {
         icon: "home",
         color: "#fff"
       }}
+      onPress={home}
     />
   );
 });

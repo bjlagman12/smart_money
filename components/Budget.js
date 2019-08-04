@@ -3,8 +3,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  StyleSheet,
-  TextInput
+  StyleSheet
 } from "react-native";
 
 export default class Budget extends React.Component {
@@ -19,16 +18,11 @@ export default class Budget extends React.Component {
       <View style={styles.container}>
         <Text style={styles.budget}>THIS IS YOUR BUDGET</Text>
         <Text style={styles.budget}>$1000</Text>
-        <TextInput
-          style={styles.textInput}
-          onChangeText={text => this.setState({ text })}
-          placeholderTextColor="blue"
-          placeholder="What is your budget"
-        />
         <View style={styles.lowerContainer}>
+          {console.log(this.props.navigation.navigate)}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => this.props.spend()}
+            onPress={() => this.props.navigation.navigate('CategoryList')}
           >
             <Text> SPEND </Text>
           </TouchableOpacity>
@@ -37,7 +31,7 @@ export default class Budget extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity 
             style={styles.button}
-            onPress={() => this.props.save()}
+            onPress={() => this.props.navigation.navigate('SaveList')}
           >
             <Text>SAVE</Text>
           </TouchableOpacity>
@@ -57,7 +51,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 50,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    borderColor: 'black',
+    borderWidth: 1
   },
   button: {
     alignItems: "center",
