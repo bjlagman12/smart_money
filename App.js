@@ -1,12 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import Top from "./components/Top";
+import { StyleSheet } from "react-native";
 import Budget from "./components/Budget";
-import CategoryList from "./components/CategoryList";
-import SaveList from './components/SaveList'
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from "react-navigation";
 
-import { createStackNavigator, createAppContainer } from 'react-navigation'
-import Save from "./components/Save";
+import CategoryList from "./components/CategoryList";
+import SaveList from "./components/SaveList";
+import Calculator from "./components/Calculator";
 
 // export default class App extends React.Component {
 //   constructor() {
@@ -30,16 +29,16 @@ import Save from "./components/Save";
 //     console.log('home')
 //     this.setState({page: 0})
 //   }
-   
+
 //   render() {
 //     let budget = (
-//       <Budget 
+//       <Budget
 //         spend={this.spend}
 //         save={this.save}
 //       />
 //     )
 //     let home = (
-//       <Top 
+//       <Top
 //         home={this.home}
 //       />
 //     )
@@ -54,33 +53,27 @@ import Save from "./components/Save";
 //   }
 // }
 
-// 
+//
 
 export default class App extends React.Component {
-  render(){
+  render() {
     return <AppContainer />;
   }
 }
 
-
-const RootStack =  createStackNavigator(
+const RootStack = createStackNavigator(
   {
-    Budget: Budget,
-    CategoryList: CategoryList,
-    SaveList: SaveList
- },
- {
-   initialRouteName: 'Budget',
- }
+    Budget,
+    CategoryList,
+    SaveList,
+    Calculator
+  },
+  {
+    initialRouteName: "Budget"
+  }
 );
 
-const AppContainer = createAppContainer(RootStack)
-
-
-
-
-
-
+const AppContainer = createAppContainer(RootStack);
 
 const styles = StyleSheet.create({
   container: {
@@ -97,19 +90,13 @@ const styles = StyleSheet.create({
   }
 });
 
+
+
 // {
 //   /* <View style={styles.bottomView}>
 // <Text style={styles.textStyle}>This is Bottom View.</Text>
 // </View> */
 // }
-
-
-
-
-
-
-
-
 
 // import React, { Component } from 'react'
 // import { View, Text, StyleSheet, Button } from 'react-native'
@@ -119,10 +106,9 @@ const styles = StyleSheet.create({
 //   render() {
 //     return(
 //      <AppContainer/>
-//     )    
+//     )
 //   }
 // }
-
 
 // class WelcomeScreen extends Component {
 //   render() {
@@ -183,7 +169,7 @@ const styles = StyleSheet.create({
 
 // const AppDrawerNavigator = createDrawerNavigator({
 //   Welcome: {
-//     screen: WelcomeScreen 
+//     screen: WelcomeScreen
 //   },
 //   Dashboard: {
 //     screen: DashboardStackNavigator
@@ -192,7 +178,7 @@ const styles = StyleSheet.create({
 
 // const AppSwitchNavigator = createSwitchNavigator({
 //   Welcome: {
-//     screen: WelcomeScreen 
+//     screen: WelcomeScreen
 //   },
 //   Dashboard: {
 //     screen: AppDrawerNavigator
@@ -208,15 +194,6 @@ const styles = StyleSheet.create({
 //     justifyContent: 'center'
 //   }
 // })
-
-
-
-
-
-
-
-
-
 
 // import React from 'react';
 // import { Button, View, Text } from 'react-native';

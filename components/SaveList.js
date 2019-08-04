@@ -3,6 +3,9 @@ import { StyleSheet, View } from "react-native";
 import Save from "./Save";
 
 export default class SaveList extends React.Component {
+  static navigationOptions = {
+    title: 'Save What',
+  };
   constructor() {
     super();
     this.state = {};

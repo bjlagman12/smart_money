@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  StyleSheet
-} from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 
 export default class Budget extends React.Component {
   constructor(props) {
@@ -22,16 +17,19 @@ export default class Budget extends React.Component {
           {console.log(this.props.navigation.navigate)}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('CategoryList')}
+            onPress={() => this.props.navigation.navigate("CategoryList")}
           >
             <Text> SPEND </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate("Calculator")}
+          >
             <Text> DEPOSIT </Text>
           </TouchableOpacity>
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.button}
-            onPress={() => this.props.navigation.navigate('SaveList')}
+            onPress={() => this.props.navigation.navigate("SaveList")}
           >
             <Text>SAVE</Text>
           </TouchableOpacity>
@@ -52,8 +50,8 @@ const styles = StyleSheet.create({
     fontSize: 50,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: 'black',
-    borderWidth: 1
+    // borderColor: "black",
+    // borderWidth: 1
   },
   button: {
     alignItems: "center",
