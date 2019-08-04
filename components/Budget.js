@@ -8,8 +8,8 @@ import {
 } from "react-native";
 
 export default class Budget extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       text: "Useless Placeholder"
     };
@@ -21,20 +21,26 @@ export default class Budget extends React.Component {
         <Text style={styles.budget}>$1000</Text>
         <TextInput
           style={styles.textInput}
-          onChangeText={(text) => this.setState({text})}
-          placeholderTextColor='blue'
-          placeholder='What is your budget'
+          onChangeText={text => this.setState({ text })}
+          placeholderTextColor="blue"
+          placeholder="What is your budget"
         />
         <View style={styles.lowerContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text> SPEND </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text> DEPOSIT </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text>SAVE</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => this.props.spend()}
+          >
+            <Text> SPEND </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button}>
+            <Text> DEPOSIT </Text>
+          </TouchableOpacity>
+          <TouchableOpacity 
+            style={styles.button}
+            onPress={() => this.props.save()}
+          >
+            <Text>SAVE</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -43,7 +49,7 @@ export default class Budget extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   budget: {
     flex: 1,
@@ -63,20 +69,20 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     borderColor: "gray",
-    borderWidth: 1,
+    borderWidth: 1
     // padding: 50
   },
   lowerContainer: {
     flex: 2,
     flexDirection: "row",
     justifyContent: "space-around",
-    paddingTop:75,
+    paddingTop: 75,
     // alignItems: "center",
     // alignContent: "space-around",
     // paddingHorizontal: 15,
     // paddingTop: 10,
     // paddingBottom: 175,
     // flexWrap: "wrap",
-    bottom:0
+    bottom: 0
   }
 });

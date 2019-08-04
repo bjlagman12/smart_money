@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-export default (Category = ({ cat, onPress }) => (
+export default (Save = ({ save, onPress }) => (
   <TouchableOpacity style={styles.button} onPress={onPress}>
-    <Text>{cat}</Text>
+    <Text> {save} </Text>
   </TouchableOpacity>
 ));
 
